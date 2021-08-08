@@ -1,0 +1,45 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">
+    <img src="https://dadan.io/wp-content/uploads/2020/11/dadan.svg" alt="" height="32" />
+  </h5>
+  <nav class="my-2 my-md-0 mr-md-3"></nav>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 mb-3">
+      <lib-record-video-button (onSuccess)="handleResponse($event)" (onFailure)="handleResponse($event)"
+        title="Select Video" type="select" buttonClass="dd__record__button__default__class"
+        [buttonStyle]="{'color':'#1e3799','font-size':'15px'}" [showSvg]="true" [showPreview]="true"
+        [copyToClipboard]="true">
+      </lib-record-video-button>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngIf="videos.length > 0" class="col-md-12">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let video of videos">
+          <div>
+            <code>title : {{video.title}}</code>
+          </div>
+          <div>
+            <code>thumbnailUrl : {{video.thumbnailUrl}}</code>
+          </div>
+          <div>
+            <code>sharedUrl : {{video.sharedUrl}}</code>
+          </div>
+          <div>
+            <code>embedUrl : {{video.embedUrl}}</code>
+          </div>
+          <div>
+            <code>customHtmlFormat : {{video.customHtmlFormat}}</code>
+          </div>
+          <div>
+            <code>
+               =============================================================================================================
+           </code>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
