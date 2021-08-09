@@ -10,11 +10,21 @@ npm install
 
 ## Usage
 
-In your component import the following
+In your app.module.ts import the following
 
 ```javascript
-import React, { useState } from "react";
-import { RecordVideoButton } from "react-dadan-extension";
+import { VideosModule } from 'angular-dadan-extension';
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    VideosModule //our module
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
 ```
 
 In your component copy & paste the following
