@@ -29,7 +29,7 @@ import { VideosModule } from 'angular-dadan-extension';
 
 In your app.component.html copy & paste the following
 
-```angular
+```javascript
 <lib-record-video-button
   (onSuccess)="handleResponse($event)"
   (onFailure)="handleResponse($event)"
