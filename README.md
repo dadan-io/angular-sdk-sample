@@ -44,21 +44,46 @@ In your app.component.html copy & paste the following
 </lib-record-video-button>
 ```
 
+In your app.component.ts copy & paste the following
+
+```javascript
+export class AppComponent {
+  title = 'angular-sample';
+  public videos : any[];
+  constructor(){
+    this.videos = [];
+  }
+  handleResponse($eventResult : any):void{
+    const {success, data, message} = $eventResult;
+    if (success) {
+      if (data) {
+        this.videos = data;
+        }
+      } else {
+        this.videos = [];
+        console.log(message);
+      }
+  }
+
+}
+```
+
 the handleResponse function , is a callback function which accept object with three parameters
 
 ```javascript
-function handleResponse({ success, data, message }) {
-  if (success) {
-    // only false when user close extension
-    if (data) {
-      // represnts the selected videos , or recorded video object after stop recording
-      setVideos(data);
+handleResponse($eventResult : any): void {
+    const {success, data, message} = $eventResult;
+    if (success) {
+        // only false when user close extension
+        if (data) {
+            // represnts the selected videos , or recorded video object after stop recording
+        this.videos = data;
+            }
+        } else {
+        this.videos = [];
+        console.error(message); //User Closed Extension
+        }
     }
-  } else {
-    setVideos([]);
-    console.error(message); //User Closed Extension
-  }
-}
 ```
 
 ## Record Button Props
