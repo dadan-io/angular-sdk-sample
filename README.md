@@ -1,6 +1,6 @@
-# Angular Dadan Extension Sample
+# Angular Dadan SDK Sample
 
-A lightweight Angular app that shows how to use [angular-dadan-extension](https://www.npmjs.com/package/angular-dadan-extension) package , which used for checking, validating, and manipulating [Google Dadan Extension](https://haal.link.sa/onboarding/download) with Angular.
+A lightweight Angular app that shows how to use [angular-dadan-sdk](https://www.npmjs.com/package/angular-dadan-sdk) package , which used for checking, validating, and manipulating [Google Dadan Extension](https://haal.link.sa/onboarding/download) with Angular.
 
 ## Install
 
@@ -13,7 +13,7 @@ npm install
 In app.module.ts we import the following
 
 ```javascript
-import { VideosModule } from 'angular-dadan-extension';// our package
+import { VideosModule } from 'angular-dadan-sdk';// our package
 @NgModule({
   declarations: [
     AppComponent
