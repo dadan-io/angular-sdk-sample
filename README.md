@@ -28,7 +28,7 @@ import { VideosModule } from 'angular-dadan-extension';// our package
 export class AppModule { }
 ```
 
-In app.component.html add the record button component
+In app.component.html we add the record button component
 
 ```html
 <lib-record-video-button
