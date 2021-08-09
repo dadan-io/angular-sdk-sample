@@ -50,18 +50,18 @@ In app.component.ts we add the following
 ```javascript
 export class AppComponent {
   title = 'angular-sample';
-  public videos : any[];
+  public videos : any[]; // selected videos from extension
   constructor(){
-    this.videos = [];
+    this.videos = []; // initial state
   }
-  handleResponse($eventResult : any):void{
+  handleResponse($eventResult : any):void{ // handles selected or recorded videos
     const {success, data, message} = $eventResult;
     if (success) {
       if (data) {
-        this.videos = data;
+        this.videos = data; //
         }
       } else {
-        this.videos = [];
+        this.videos = [];//
         console.log(message);
       }
   }
