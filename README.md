@@ -1,6 +1,6 @@
-# React Dadan Extension Sample
+# Angular Dadan Extension Sample
 
-A lightweight React app that shows how to use [react-dadan-extension](https://www.npmjs.com/package/react-dadan-extension) package , which used for checking, validating, and manipulating [Google Dadan Extension](https://haal.link.sa/onboarding/download) with React.
+A lightweight Angular app that shows how to use [angular-dadan-extension](https://www.npmjs.com/package/angular-dadan-extension) package , which used for checking, validating, and manipulating [Google Dadan Extension](https://haal.link.sa/onboarding/download) with Angular.
 
 ## Install
 
