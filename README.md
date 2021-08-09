@@ -27,27 +27,21 @@ import { VideosModule } from 'angular-dadan-extension';
 })
 ```
 
-In your component copy & paste the following
+In your app.component.html copy & paste the following
 
-```javascript
-function YourComponent() {
-  const [videos, setVideos] = useState([]);
-  return (
-    <>
-      <RecordVideoButton
-        showSvg={true}
-        title="Select Video"
-        copyToClipboard={true}
-        showPreview={true}
-        type="select"
-        buttonClass="dd__record__button__default__class"
-        buttonStyle={{}}
-        onFailure={handleResponse}
-        onSuccess={handleResponse}
-      />
-    </>
-  );
-}
+```angular
+<lib-record-video-button
+  (onSuccess)="handleResponse($event)"
+  (onFailure)="handleResponse($event)"
+  title="Select Video"
+  type="select"
+  buttonClass="dd__record__button__default__class"
+  [buttonStyle]="{ color: '#1e3799', 'font-size': '15px' }"
+  [showSvg]="true"
+  [showPreview]="true"
+  [copyToClipboard]="true"
+>
+</lib-record-video-button>
 ```
 
 the handleResponse function , is a callback function which accept object with three parameters
