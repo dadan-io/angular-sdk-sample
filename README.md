@@ -1,27 +1,74 @@
-# AngularSample
+# React Dadan Extension Sample
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+A lightweight React app that shows how to use [react-dadan-extension](https://www.npmjs.com/package/react-dadan-extension) package , which used for checking, validating, and manipulating [Google Dadan Extension](https://haal.link.sa/onboarding/download) with React.
 
-## Development server
+## Install
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+npm install
+```
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In your component import the following
 
-## Build
+```javascript
+import React, { useState } from "react";
+import { RecordVideoButton } from "react-dadan-extension";
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+In your component copy & paste the following
 
-## Running unit tests
+```javascript
+function YourComponent() {
+  const [videos, setVideos] = useState([]);
+  return (
+    <>
+      <RecordVideoButton
+        showSvg={true}
+        title="Select Video"
+        copyToClipboard={true}
+        showPreview={true}
+        type="select"
+        buttonClass="dd__record__button__default__class"
+        buttonStyle={{}}
+        onFailure={handleResponse}
+        onSuccess={handleResponse}
+      />
+    </>
+  );
+}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+the handleResponse function , is a callback function which accept object with three parameters
 
-## Running end-to-end tests
+```javascript
+function handleResponse({ success, data, message }) {
+  if (success) {
+    // only false when user close extension
+    if (data) {
+      // represnts the selected videos , or recorded video object after stop recording
+      setVideos(data);
+    }
+  } else {
+    setVideos([]);
+    console.error(message); //User Closed Extension
+  }
+}
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Record Button Props
 
-## Further help
+| Parameter         | Type      | Description                                                                                 |
+| :---------------- | :-------- | :------------------------------------------------------------------------------------------ |
+| `type`            | `string`  | **Required**. either record or select , else will show error                                |
+| `title`           | `string`  | **Optional**. button title                                                                  |
+| `buttonClass`     | `string`  | **Optional**. the default class , or your custom class                                      |
+| `buttonStyle`     | `object`  | **Optional**. the default style , or your custom style as string                            |
+| `showSvg`         | `boolean` | **Optional**. to show Svg icon in button                                                    |
+| `showPreview`     | `boolean` | **Optional**. to show preview dialog of recorded video                                      |
+| `copyToClipboard` | `boolean` | **Optional**. to notify user that video shared url was copied to clipboard as toast message |
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
