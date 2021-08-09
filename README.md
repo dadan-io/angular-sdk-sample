@@ -10,7 +10,7 @@ npm install
 
 ## Usage
 
-In your app.module.ts import the following
+In app.module.ts we import the following
 
 ```javascript
 import { VideosModule } from 'angular-dadan-extension';
@@ -27,9 +27,9 @@ import { VideosModule } from 'angular-dadan-extension';
 })
 ```
 
-In your app.component.html copy & paste the following
+In app.component.html add the record button component
 
-```javascript
+```html
 <lib-record-video-button
   (onSuccess)="handleResponse($event)"
   (onFailure)="handleResponse($event)"
@@ -44,7 +44,7 @@ In your app.component.html copy & paste the following
 </lib-record-video-button>
 ```
 
-In your app.component.ts copy & paste the following
+In app.component.ts we add the following
 
 ```javascript
 export class AppComponent {
