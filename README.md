@@ -13,7 +13,7 @@ npm install
 In app.module.ts we import the following
 
 ```javascript
-import { VideosModule } from 'angular-dadan-extension';
+import { VideosModule } from 'angular-dadan-extension';// our package
 @NgModule({
   declarations: [
     AppComponent
